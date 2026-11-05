@@ -7,6 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "prisma generate && nest build",
+    "postbuild": "node -e \"const fs=require('fs'); fs.mkdirSync('dist/src', {recursive:true}); fs.writeFileSync('dist/src/main.js', 'require(\\\"../main.js\\\");');\"",
     "postinstall": "prisma generate",
     "vercel-build": "prisma generate && nest build",
     "dev": "npx prisma generate && npx prisma migrate deploy && nest start --watch",
