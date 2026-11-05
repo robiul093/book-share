@@ -1,8 +1,8 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '../../prisma/prisma.service';
 import { GetBannersQueryDto } from './dto/get-banners.dto';
 import { Prisma } from '@prisma/client';
-import { uploadImageToCloudinary } from 'src/common/helpers/cloudinary.helper';
+import { uploadImageToCloudinary } from '../../common/helpers/cloudinary.helper';
 
 @Injectable()
 export class BannerService {

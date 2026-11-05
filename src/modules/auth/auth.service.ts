@@ -5,20 +5,20 @@ import {
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '../../prisma/prisma.service';
 import { UserSignUpDto } from './dto/user.singup.dto';
-import { ERROR_MESSAGES } from 'src/common/constants';
+import { ERROR_MESSAGES } from '../../common/constants';
 import * as bcrypt from 'bcrypt';
 import { LoginDto } from './dto/login.dto';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
-import { IEnv } from 'src/config/env.config';
+import { IEnv } from '../../config/env.config';
 import { ForgotPasswordDto } from './dto/forgot.password.dto';
 import { ChangePasswordDto } from './dto/change.password.dto';
 import { VerifyOtpDto } from './dto/verify.otp.dto';
 import { ResetPasswordDto } from './dto/reset.password.dto';
-import { sendOtpEmail } from 'src/common/helpers/mail.helper';
-import { uploadImageToCloudinary } from 'src/common/helpers/cloudinary.helper';
+import { sendOtpEmail } from '../../common/helpers/mail.helper';
+import { uploadImageToCloudinary } from '../../common/helpers/cloudinary.helper';
 
 @Injectable()
 export class AuthService {

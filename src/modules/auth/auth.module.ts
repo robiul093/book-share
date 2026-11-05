@@ -4,10 +4,10 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { PassportModule } from '@nestjs/passport';
 
 import { AuthService } from './auth.service';
-import { PrismaModule } from 'src/prisma/prisma.module';
+import { PrismaModule } from '../../prisma/prisma.module';
 import { AtStrategy } from './strategie/access-token.strategy';
 import { AuthController } from './auth.controller';
-import { IEnv } from 'src/config/env.config';
+import { IEnv } from '../../config/env.config';
 
 @Module({
   imports: [

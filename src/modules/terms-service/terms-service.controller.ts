@@ -20,10 +20,10 @@ import {
   ApiTags,
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/common/guards/jwt-auth.guard';
-import { RolesGuard } from 'src/common/guards/roles.guard';
-import { Roles } from 'src/common/decorator/roles.decorator';
-import { sendResponse } from 'src/common/helpers';
+import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
+import { RolesGuard } from '../../common/guards/roles.guard';
+import { Roles } from '../../common/decorator/roles.decorator';
+import { sendResponse } from '../../common/helpers';
 import { TermsServiceService } from './terms-service.service';
 import { CreateTermsServiceDto } from './dto/create-terms-service.dto';
 import { UpdateTermsServiceDto } from './dto/update-terms-service.dto';

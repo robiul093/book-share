@@ -17,10 +17,10 @@ import {
   ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/common/guards/jwt-auth.guard';
-import { GetCurrentUser } from 'src/common/decorator/get-current-user.decorator';
+import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
+import { GetCurrentUser } from '../../common/decorator/get-current-user.decorator';
 import { NotificationService } from './notification.service';
-import { sendResponse } from 'src/common/helpers';
+import { sendResponse } from '../../common/helpers';
 
 @ApiTags('Notifications')
 @ApiBearerAuth('access-token')

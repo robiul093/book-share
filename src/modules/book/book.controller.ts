@@ -32,10 +32,10 @@ import { BookService } from './book.service';
 import { CreateBookDto } from './dto/create.book.dto';
 import { UpdateBookDto } from './dto/update.book.dto';
 import { GetBooksQueryDto } from './dto/get.books.query.dto';
-import { JwtAuthGuard } from 'src/common/guards/jwt-auth.guard';
-import { GetCurrentUser } from 'src/common/decorator/get-current-user.decorator';
-import { sendResponse } from 'src/common/helpers';
-import { SUCCESS_MESSAGES } from 'src/common/constants';
+import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
+import { GetCurrentUser } from '../../common/decorator/get-current-user.decorator';
+import { sendResponse } from '../../common/helpers';
+import { SUCCESS_MESSAGES } from '../../common/constants';
 import { DeleteBookImagesDto } from './dto/delete.book.image.dto';
 
 @ApiTags('Book')

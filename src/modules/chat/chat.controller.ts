@@ -17,10 +17,10 @@ import {
     ApiQuery,
     ApiTags,
 } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/common/guards/jwt-auth.guard';
-import { GetCurrentUser } from 'src/common/decorator/get-current-user.decorator';
+import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
+import { GetCurrentUser } from '../../common/decorator/get-current-user.decorator';
 import { ChatService } from './chat.service';
-import { sendResponse } from 'src/common/helpers';
+import { sendResponse } from '../../common/helpers';
 
 @ApiTags('Chat')
 @ApiBearerAuth('access-token')

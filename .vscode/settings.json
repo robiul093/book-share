@@ -1,0 +1,8 @@
+{
+  "files.autoSave": "onFocusChange",
+  "antigravity.enableInlineDiff": true,
+  "antigravity.autoAccept.enabled": false,
+  "antigravity.autoAccept.fileEdits": false,
+  "editor.codeLens": true,
+  "diffEditor.renderSideBySide": false
+}

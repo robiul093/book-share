@@ -26,7 +26,9 @@ export async function bootstrap() {
 
   initializeAPM(configService, nodeEnv);
 
-  const port = await getAvailablePort(configService.get<number>('PORT', 3000));
+  const port = process.env.PORT
+    ? Number(process.env.PORT)
+    : await getAvailablePort(configService.get<number>('PORT', 3000));
 
   // Global prefix: all routes are served under /api/v1/<route>
   app.setGlobalPrefix('api');
@@ -83,4 +85,8 @@ export async function bootstrap() {
   process.on('SIGTERM', shutdown);
 }
 
-bootstrap();
+if (!process.env.VERCEL) {
+  bootstrap();
+}
+
+export default bootstrap;

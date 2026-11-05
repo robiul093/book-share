@@ -4,12 +4,12 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { uploadImageToCloudinary } from 'src/common/helpers/cloudinary.helper';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { uploadImageToCloudinary } from '../../common/helpers/cloudinary.helper';
+import { PrismaService } from '../../prisma/prisma.service';
 import { CreateBookDto } from './dto/create.book.dto';
 import { UpdateBookDto } from './dto/update.book.dto';
 import { GetBooksQueryDto } from './dto/get.books.query.dto';
-import { ERROR_MESSAGES } from 'src/common/constants';
+import { ERROR_MESSAGES } from '../../common/constants';
 import { Prisma } from '@prisma/client';
 import { DeleteBookImagesDto } from './dto/delete.book.image.dto';
 

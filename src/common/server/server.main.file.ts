@@ -154,20 +154,12 @@ export function setupSwagger(
   port: number,
   configService: ConfigService,
 ): void {
-  // if (nodeEnv === 'production') return;
   if (nodeEnv === 'production' && !configService.get('ENABLE_SWAGGER')) {
     return;
   }
 
-  // const baseUrl =
-  //   nodeEnv === 'production'
-  //     ? configService.get<string>('APP_URL')
-  //     : `http://localhost:${port}`;
-  const baseUrl = configService.get<string>('APP_URL');
-
-  if (!baseUrl) {
-    throw new Error('APP_URL is not defined in production environment');
-  }
+  const baseUrl =
+    configService.get<string>('APP_URL') || `http://localhost:${port}`;
 
   const config = new DocumentBuilder()
     .setTitle('NestJS Prisma Template API')
@@ -195,7 +187,19 @@ Auth: Use POST /api/v1/auth/login to obtain a Bearer token, then click **Authori
 
   const document = SwaggerModule.createDocument(app, config);
 
+  const swaggerCDN = 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.18.2';
+
   SwaggerModule.setup('docs', app, document, {
+    customCssUrl: [
+      `${swaggerCDN}/swagger-ui.min.css`,
+      `${swaggerCDN}/swagger-ui-standalone-preset.min.css`,
+    ],
+    customJs: [
+      `${swaggerCDN}/swagger-ui-bundle.js`,
+      `${swaggerCDN}/swagger-ui-standalone-preset.js`,
+    ],
+    customfavIcon: `${swaggerCDN}/favicon-32x32.png`,
+    customSiteTitle: 'Protiva API Docs',
     swaggerOptions: {
       persistAuthorization: true,
       tagsSorter: 'alpha',

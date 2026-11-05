@@ -22,12 +22,12 @@ import {
 } from '@nestjs/swagger';
 import { BookCategoryService } from './book-category.service';
 import { CreateBookCategoryDto } from './dto/create.category.dto';
-import { sendResponse } from 'src/common/helpers';
-import { JwtAuthGuard } from 'src/common/guards/jwt-auth.guard';
-import { RolesGuard } from 'src/common/guards/roles.guard';
-import { Roles } from 'src/common/decorator/roles.decorator';
+import { sendResponse } from '../../common/helpers';
+import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
+import { RolesGuard } from '../../common/guards/roles.guard';
+import { Roles } from '../../common/decorator/roles.decorator';
 import { UpdateCategoryDto } from './dto/update.category.dto';
-import { GetCurrentUser } from 'src/common/decorator/get-current-user.decorator';
+import { GetCurrentUser } from '../../common/decorator/get-current-user.decorator';
 import { GetCategoriesQueryDto } from './dto/get.category.dto';
 
 @ApiTags('Book Category')

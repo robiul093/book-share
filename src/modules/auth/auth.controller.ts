@@ -23,12 +23,12 @@ import {
   ApiConsumes,
 } from '@nestjs/swagger';
 import { UserSignUpDto } from './dto/user.singup.dto';
-import { SUCCESS_MESSAGES } from 'src/common/constants';
+import { SUCCESS_MESSAGES } from '../../common/constants';
 import { LoginDto } from './dto/login.dto';
 import { RefreshTokenDto } from './dto/refresh.token.dto';
-import { GetCurrentUser } from 'src/common/decorator/get-current-user.decorator';
-import { JwtAuthGuard } from 'src/common/guards/jwt-auth.guard';
-import { sendResponse } from 'src/common/helpers/api-response.helper';
+import { GetCurrentUser } from '../../common/decorator/get-current-user.decorator';
+import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
+import { sendResponse } from '../../common/helpers/api-response.helper';
 import { ForgotPasswordDto } from './dto/forgot.password.dto';
 import {
   ResendVerificationOtpDto,
