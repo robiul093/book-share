@@ -14,6 +14,7 @@ import { ChatModule } from './modules/chat/chat.module';
 import { NotificationModule } from './modules/notification/notification.module';
 import { BannerModule } from './modules/banner/banner.module';
 import { TermsServiceModule } from './modules/terms-service/terms-service.module';
+import { SeederModule } from './common/seeder';
 import envConfig from './config/env.config';
 
 @Module({
@@ -24,6 +25,7 @@ import envConfig from './config/env.config';
       load: [envConfig],
       cache: true,
     }),
+    SeederModule,
     AuthModule,
     UserModule,
     CloudinaryModule,
