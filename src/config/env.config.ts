@@ -39,6 +39,10 @@ export interface IEnv {
   ADMIN_CONFIG: {
     SUPER_ADMIN_EMAIL: string;
     SUPER_ADMIN_PASSWORD: string;
+    MODERATOR_EMAIL: string;
+    MODERATOR_PASSWORD: string;
+    USER_EMAIL: string;
+    USER_PASSWORD: string;
   };
 }
 
@@ -100,6 +104,10 @@ export default registerAs('env', (): IEnv => {
     ADMIN_CONFIG: {
       SUPER_ADMIN_EMAIL: process.env.SUPER_ADMIN_EMAIL || '',
       SUPER_ADMIN_PASSWORD: process.env.SUPER_ADMIN_PASSWORD || '',
+      MODERATOR_EMAIL: process.env.MODERATOR_EMAIL || '',
+      MODERATOR_PASSWORD: process.env.MODERATOR_PASSWORD || '',
+      USER_EMAIL: process.env.USER_EMAIL || '',
+      USER_PASSWORD: process.env.USER_PASSWORD || '',
     },
   };
 });
